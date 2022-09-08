@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Predict </title>
+{% endblock %}
+
+{% block body %}
+<h2>Predict</h2>
+<hr>
+<br>
+<form action="/predict" , method='POST'>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Age">Age</label>
+
+            <input class="form-control" type="number" step="0.0001" name="age" placeholder="Enter Your age"
+                aria-label="Enter Your age">
+            <br>
+
+            <label for="sex">Sex</label>
+            <select class="form-control" type="number" name="sex">
+                <option  value="1">male</option>
+                <option  value="0">female</option>
+            </select>
+            <br>
+
+            <label for="bmi">Body Mass Index</label>
+            <input class="form-control" type="number" name="bmi" placeholder="Enter Your Body Mass Index"
+                aria-label="Enter Your Body Mass Index">
+            <br>
+
+            <label for="children">Children</label>
+            <input class="form-control" type="number" name="children" placeholder="Enter how many children you have"
+                aria-label="Enter how many children you have">
+            <br>
+
+            <label for="smoker">Are You Smoker</label>
+            <select class="form-control" type="number" name="smoker" id="smoker">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+
+            <label for="region">Region</label>
+            <select class="form-control" name="region" type="number" placeholder="Enter Your Gender" aria-label="Enter Your Gender">
+                <option value="3">southwest</option>
+                <option value="2">southeast</option>
+                <option value="1">northwest</option>
+                <option value="0">northeast</option>
+            </select>
+
+            <br>
+            <hr>
+            <input class="btn btn-danger" type="submit" value="Predict">
+            <hr>
+
+            <h5> Medical Expenses prediction is :    {{ pred_val }}</h5>
+            <hr>
+
+        </div>
+</form>
+
+
+{% endblock %}
